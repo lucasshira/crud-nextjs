@@ -10,5 +10,5 @@ const Titulo = (props: TituloProps) => {
     </div>
   );
 }
- 
+
 export default Titulo;
