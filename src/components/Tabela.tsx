@@ -2,9 +2,9 @@ import Cliente from "@/core/Cliente";
 import { IconeEdicao, IconeLixo } from "./Icones";
 
 interface TabelaProps {
-  clientes: Cliente[]
-  clienteSelecionado?: (cliente: Cliente) => void
-  clienteExcluido?: (cliente: Cliente) => void
+  clientes: Cliente[];
+  clienteSelecionado?: (cliente: Cliente) => void;
+  clienteExcluido?: (cliente: Cliente) => void;
 }
 
 const Tabela = (props: TabelaProps) => {
