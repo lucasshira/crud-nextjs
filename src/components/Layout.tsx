@@ -12,7 +12,7 @@ const Layout = (props: LayoutProps) => {
         {props.titulo}
       </Titulo>
 
-      <div className="p-6">
+      <div className="p-5">
         {props.children}
       </div>
     </div>
