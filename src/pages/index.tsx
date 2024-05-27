@@ -48,15 +48,15 @@ export default function Home() {
               </Botao>
             </div>
             <Tabela 
-              clientes={clientes} 
-              clienteSelecionado={clienteSelecionado} 
+              clientes={clientes}
+              clienteSelecionado={clienteSelecionado}
               clienteExcluido={clienteExcluido}
             />
           </>
         ) : (
           <Formulario 
-            cancelado={() => setVisivel('tabela')} 
-            cliente={cliente} 
+            cancelado={() => setVisivel('tabela')}
+            cliente={cliente}
             clienteMudou={salvarCliente}
           />
         )}
