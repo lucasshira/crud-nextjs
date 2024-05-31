@@ -1,7 +1,9 @@
 import { useState } from "react"
 
+type Visivel = 'tabela' | 'form';
+
 export default function useTabelaForm() {
-  const [visivel, setVisivel] = useState<'tabela' | 'form'>('tabela');
+  const [visivel, setVisivel] = useState<Visivel>('tabela');
 
   const exibirTabela = () => setVisivel('tabela');
   const exibirFormulario = () => setVisivel('form');

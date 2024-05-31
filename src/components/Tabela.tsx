@@ -9,7 +9,7 @@ interface TabelaProps {
 
 const Tabela = (props: TabelaProps) => {
 
-  const exibirAcoes = props.clienteExcluido || props.clienteSelecionado
+  const exibirAcoes = props.clienteExcluido || props.clienteSelecionado;
 
   const renderizarCabecalho = (): JSX.Element => {
     return (

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import Cliente from "@/core/Cliente";
 import ColecaoCliente from "@/backend/db/ColecaoCliente";
 import ClienteRepositorio from "@/core/ClienteRepositorio";
@@ -12,19 +12,21 @@ export default function useClients() {
   const [cliente, setCliente] = useState<Cliente>(Cliente.vazio());
   const [clientes, setClientes] = useState<Cliente[]>([]);
 
-  const obterTodos = () => {
+  const obterTodos = useCallback(() => {
     repo.obterTodos(cliente).then(clientes => {
       setClientes(clientes);
       exibirTabela();
     })
-  }
+  }, []);
 
-  useEffect(obterTodos, []);
+  useEffect(() => {
+    obterTodos();
+  }, [obterTodos]);
 
-  const selecionarCliente = (cliente: Cliente) => {
+  const selecionarCliente = useCallback((cliente: Cliente) => {
     setCliente(cliente);
     exibirFormulario();
-  };
+  }, [exibirFormulario]);
   
   const excluirCliente = async (cliente: Cliente) => {
     await repo.excluir(cliente);
