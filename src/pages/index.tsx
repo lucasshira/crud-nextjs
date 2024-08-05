@@ -23,9 +23,9 @@ export default function Home() {
       <Layout titulo="Cadastro Simples">
         {tabelaVisivel ? (
           <>
-            <div className="flex justify-end">
-              <Botao onClick={novoCliente} className="mb-4" cor="green">
-                Novo cliente
+            <div className="flex justify-start">
+              <Botao onClick={novoCliente} className="mb-4" cor="blue">
+                Adicionar novo cliente
               </Botao>
             </div>
             <Tabela 
